@@ -8,9 +8,16 @@
 
   <ItemGroup>
     <Folder Include="Base\" />
-    <Folder Include="Config\" />
-    <Folder Include="Connection\" />
     <Folder Include="Helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HubSpot.Global\HubSpot.Global.csproj" />
   </ItemGroup>
 
 </Project>
