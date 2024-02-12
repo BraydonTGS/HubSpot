@@ -31,6 +31,7 @@ namespace HubSpot.Business.Tests.HubSpotApiTest
             var contacts = await _hubSpotApiService.GetSpecifiedListOfContactsAsync(314);
 
             Assert.IsNotNull(contacts);
+            Assert.AreEqual(20, contacts.Count());
         }
 
     }
