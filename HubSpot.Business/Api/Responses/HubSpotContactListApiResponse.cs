@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace HubSpot.Business.Api.Response
+namespace HubSpot.Business.Api.Responses
 {
     /// <summary>
     /// HubSpot API Response Object - Contact List

@@ -1,4 +1,4 @@
-﻿using HubSpot.Business.Api.Response;
+﻿using HubSpot.Business.Api.Responses;
 using HubSpot.Business.Connection;
 using HubSpot.Business.Mappers;
 using HubSpot.Business.Models;

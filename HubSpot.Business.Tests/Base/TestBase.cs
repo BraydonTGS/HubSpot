@@ -1,5 +1,5 @@
 ﻿using HubSpot.Business.Api;
-using HubSpot.Business.Api.Response;
+using HubSpot.Business.Api.Responses;
 using HubSpot.Business.Mappers;
 using HubSpot.Business.Models;
 using Microsoft.Extensions.DependencyInjection;
