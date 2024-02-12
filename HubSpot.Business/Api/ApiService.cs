@@ -33,10 +33,12 @@ namespace HubSpot.Business.Api
         #endregion
 
         #region GetApiResponseAsync
-        public async Task<TResponse> GetApiResponseAsync<TResponse>(string url)
+        public async Task<TResponse> GetApiResponseAsync<TResponse>(string route)
         {
             try
             {
+                var url = $"{_baseApiUrl}{route}";
+
                 var response = await _client.GetStringAsync(url);
 
                 var results = JsonConvert.DeserializeObject<TResponse>(response);

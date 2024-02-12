@@ -8,6 +8,6 @@ namespace HubSpot.Business.Api
     /// </summary>
     public interface IHubSpotApiService
     {
-        Task<List<ContactDto>> GetSpecifiedListOfContactsAsync(int id);
+        Task<List<ContactDto>> GetSpecifiedListOfContactsAsync(int id, bool addParameters = false);
     }
 }

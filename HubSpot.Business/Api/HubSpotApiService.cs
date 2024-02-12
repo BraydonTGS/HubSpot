@@ -11,7 +11,7 @@ namespace HubSpot.Business.Api
     /// Used for interacting with the HubSpotApi
     /// </summary>
     public class HubSpotApiService : IHubSpotApiService
-        {
+    {
         private readonly IApiService _apiService;
 
         public HubSpotApiService(IApiService apiService)
@@ -22,22 +22,27 @@ namespace HubSpot.Business.Api
         }
 
         #region GetSpecifiedListOfContactsAsync
-        public async Task<List<ContactDto>> GetSpecifiedListOfContactsAsync(int id)
+        /// <summary>
+        /// Get the Specified List of Contacts Async
+        /// 
+        /// Todo: Update Method to Add Parameters based on if the User wants to filter.
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="addParameters"></param>
+        /// <returns></returns>
+        public async Task<List<ContactDto>> GetSpecifiedListOfContactsAsync(int id, bool addParameters = false)
         {
             try
             {
-                var url = $"https://api.hubapi.com/contacts/v1/lists/{id}/contacts/all?property=vid&property=email&property=firstname&property=lastname&property=ams_member_number";
+                var route = $"contacts/v1/lists/{id}/contacts/all?property=vid&property=email&property=firstname&property=lastname&property=ams_member_number";
 
-                var contactList = await _apiService.GetApiResponseAsync<HubSpotContactListApiResponse>(url);
+                var contactList = await _apiService.GetApiResponseAsync<HubSpotContactListApiResponse>(route);
 
                 return new List<ContactDto>();
             }
-            catch (Exception ex)
-            {
+            catch (Exception) { throw; }
 
-                throw;
-            }
-   
         }
         #endregion
 
