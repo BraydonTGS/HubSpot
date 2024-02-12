@@ -12,9 +12,10 @@ namespace HubSpot.Business.Config
         /// <returns></returns>
         public static IServiceCollection ConfigureBusinessServices(IServiceCollection services)
         {
-            // Services //
+            // Api Services //
             services.AddScoped<HttpClient>();
             services.AddScoped<IApiService, ApiService>();
+            services.AddScoped<IHubSpotApiService, HubSpotApiService>();
 
             return services;
         }
