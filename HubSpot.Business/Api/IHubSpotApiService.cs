@@ -1,4 +1,6 @@
 ﻿
+using HubSpot.Business.Models;
+
 namespace HubSpot.Business.Api
 {
     /// <summary>
@@ -6,6 +8,6 @@ namespace HubSpot.Business.Api
     /// </summary>
     public interface IHubSpotApiService
     {
-        Task GetSpecifiedListOfContactsAsync(int listId);
+        Task<List<ContactDto>> GetSpecifiedListOfContactsAsync(int id);
     }
 }

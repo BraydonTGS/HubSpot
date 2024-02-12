@@ -23,5 +23,15 @@ namespace HubSpot.Business.Tests.HubSpotApiTest
         {
             Assert.IsNotNull(_hubSpotApiService);
         }
+
+        [TestMethod]
+        public async Task HubSpotApiService_GetSpecifiedContactListAsync_Success()
+        {
+
+            var contacts = await _hubSpotApiService.GetSpecifiedListOfContactsAsync(314);
+
+            Assert.IsNotNull(contacts);
+        }
+
     }
 }

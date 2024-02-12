@@ -1,4 +1,6 @@
-﻿using HubSpot.Business.Connection;
+﻿using HubSpot.Business.Api.Response;
+using HubSpot.Business.Connection;
+using HubSpot.Business.Models;
 using HubSpot.Global.Constants;
 
 namespace HubSpot.Business.Api
@@ -20,9 +22,22 @@ namespace HubSpot.Business.Api
         }
 
         #region GetSpecifiedListOfContactsAsync
-        public async Task GetSpecifiedListOfContactsAsync(int id)
+        public async Task<List<ContactDto>> GetSpecifiedListOfContactsAsync(int id)
         {
-            return;
+            try
+            {
+                var url = $"https://api.hubapi.com/contacts/v1/lists/{id}/contacts/all?property=vid&property=email&property=firstname&property=lastname&property=ams_member_number";
+
+                var contactList = await _apiService.GetApiResponseAsync<HubSpotContactListApiResponse>(url);
+
+                return new List<ContactDto>();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+   
         }
         #endregion
 
