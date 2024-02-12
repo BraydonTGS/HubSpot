@@ -11,9 +11,17 @@ namespace HubSpot.Business.Mappers
         public HubSpotApiResponseMapper() { }
 
         #region MapFromApiResponseCollection
+        /// <summary>
+        /// Main Method for Mapping from the <see cref="HubSpotContactListApiResponse"/> to a Collection of <see cref="ContactDto"/>
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
         public IEnumerable<ContactDto> MapFromApiResponseCollection(HubSpotContactListApiResponse response)
         {
-            throw new NotImplementedException();
+            var contacts = new List<ContactDto>();
+
+
+            return contacts;
         }
         #endregion
     }
