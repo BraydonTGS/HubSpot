@@ -16,7 +16,7 @@ Add one private static property _hubSpotApiKey with the initializer set to "Your
 
 Implement a static method GetHubSpotApiKey that returns the _hubSpotApiKey.
 
-Build the Project: Clean and rebuild the project to ensure there are no errors.
+Clean and rebuild the project to ensure there are no errors.
 
 ## Testing
 The HubSpotApiServiceTests Class Currently has all of the Tests for Querying the HubSpot API. 
@@ -25,10 +25,9 @@ There is also a test that writes the results to a CSV file using a helper class 
 
 The Results are Exported to a TestOutput Folder inside the TestProject.Business
 
-In the TestBase Class update the _outputDirectory property by replacing ADD YOUR FILE PATH HERE - With your Repository Location.
+In the TestBase Class update the _outputDirectory property by replacing "ADD YOUR FILE PATH HERE" - With your Repository Location.
 
 ## Architecture
-
 This application is built using a Three-Tier Architecture with the Repository Design Pattern, aimed at making the functionality reusable across different user interfaces and flexible for adding new user requirements.
 
 ## Future Encancements
@@ -37,7 +36,7 @@ Integrate logging (e.g., Serilog).
 Develop a Mapper Test Class and CsvExportHelper Test Class.
 Enhance exception handling.
 Add a user interface.
-
+Contine to Develop this README
 
 ## Project Structure
 ### Business
