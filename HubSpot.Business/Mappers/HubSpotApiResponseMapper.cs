@@ -65,7 +65,7 @@ namespace HubSpot.Business.Mappers
                     if (contact.properties.ams_member_number?.value != null) { amsMemberNumber = contact.properties.ams_member_number.value; }
                 }
                 if (vid != 0)
-                    dto.Id = vid; dto.FirstName = firstName; dto.LastName = lastName; dto.Email = email; dto.AmsMemberNumber = amsMemberNumber; contacts.Add(dto);
+                    dto.Vid = vid; dto.FirstName = firstName; dto.LastName = lastName; dto.Email = email; dto.AmsMemberNumber = amsMemberNumber; contacts.Add(dto);
             }
         }
         #endregion

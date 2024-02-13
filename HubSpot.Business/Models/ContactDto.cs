@@ -8,7 +8,7 @@ namespace HubSpot.Business.Models
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class ContactDto
     {
-        public int Id { get; set; }
+        public int Vid { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
@@ -16,7 +16,7 @@ namespace HubSpot.Business.Models
 
         private string GetDebuggerDisplay()
         {
-            return $"Id: {Id}, FirstName: {FirstName}, LastName: {LastName}";
+            return $"Vid: {Vid}, FirstName: {FirstName}, LastName: {LastName}";
         }
     }
 }
