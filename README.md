@@ -32,8 +32,10 @@ This application is built using a Three-Tier Architecture with the Repository De
 
 ## Future Enhancements 
 - Implement more test methods for HubSpotApiService.
+- Ensure Proper Exceptions are being throw via Test Methods
+- Develop a Mapper Test Class and CsvExportHelper Test Class
 - Integrate logging (e.g., Serilog).
-- Develop a Mapper Test Class and CsvExportHelper Test Class.
+- StandUp an Test DB to save ContactDto(s) for integration testing without relying on the API.
 - Enhance exception handling.
 - Add a user interface.
 - Contine to Develop this README
