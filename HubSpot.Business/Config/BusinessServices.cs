@@ -1,6 +1,7 @@
 ﻿using HubSpot.Business.Api;
 using HubSpot.Business.Api.Responses;
 using HubSpot.Business.Helpers;
+using HubSpot.Business.Logging;
 using HubSpot.Business.Mappers;
 using HubSpot.Business.Models;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,9 @@ namespace HubSpot.Business.Config
 
             // Helpers //
             services.AddSingleton<ICsvExportHelper, CsvExportHelper>();
+
+            // Logging //
+            LoggingConfig.ConfigureLogging(services);
 
             return services;
         }

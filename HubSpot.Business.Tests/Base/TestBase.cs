@@ -1,8 +1,4 @@
-﻿using HubSpot.Business.Api;
-using HubSpot.Business.Api.Responses;
-using HubSpot.Business.Helpers;
-using HubSpot.Business.Mappers;
-using HubSpot.Business.Models;
+﻿using HubSpot.Business.Config;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -21,14 +17,8 @@ namespace HubSpot.Business.Tests.Base
         {
             var services = new ServiceCollection();
 
-            // Api Services //
-            services.AddScoped<HttpClient>();
-            services.AddScoped<IApiService, ApiService>();
-            services.AddScoped<IHubSpotApiService, HubSpotApiService>();
-            services.AddScoped<IApiResponseMapper<ContactDto, HubSpotContactListApiResponse>, HubSpotApiResponseMapper>();
-
-            // Helpers //
-            services.AddSingleton<ICsvExportHelper, CsvExportHelper>();
+            // Register Business Dependencies //
+            BusinessServices.ConfigureBusinessServices(services);
 
             return services;
         }
