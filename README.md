@@ -30,7 +30,7 @@ In the TestBase Class update the _outputDirectory property by replacing "ADD YOU
 ## Architecture
 This application is built using a Three-Tier Architecture with the Repository Design Pattern, aimed at making the functionality reusable across different user interfaces and flexible for adding new user requirements.
 
-## Future Encancements
+## Future Enhancements 
 - Implement more test methods for HubSpotApiService.
 - Integrate logging (e.g., Serilog).
 - Develop a Mapper Test Class and CsvExportHelper Test Class.
