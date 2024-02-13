@@ -6,7 +6,14 @@ HubSpot Coding Challenge - The goal of this exercise is to see how you approach 
 
 ### Business
 The `Business` project contains the business logic of the application. It includes the following components:
-
+- **ApiService:**
+- **HubSpotApiService:**
+- **HubSpotApiResponseMapper:**
+- **HubSpot.Business.Tests:**
+- **Config:**
+- **Connection:**
+- **Helpers:**
+- **Models**
 ### Test Projects
 The `Tests` Folder Contains all the Test Projects for the Application.
 - **HubSpot.Business.Tests:**
