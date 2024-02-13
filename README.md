@@ -25,7 +25,7 @@ There is also a test that writes the results to a CSV file using a helper class 
 
 The Results are Exported to a TestOutput Folder inside the TestProject.Business
 
-In the TestBase Class update the _outputDirectory property to a directory where you want test files outputed.
+In the TestBase Class update the _outputDirectory property by replacing ADD YOUR FILE PATH HERE - With your Repository Location.
 
 ## Architecture
 
