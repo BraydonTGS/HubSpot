@@ -1,5 +1,6 @@
 ﻿using HubSpot.Business.Api.Responses;
 using HubSpot.Business.Models;
+using HubSpot.Global.Exceptions;
 
 namespace HubSpot.Business.Mappers
 {
@@ -32,9 +33,9 @@ namespace HubSpot.Business.Mappers
 
                 return contacts;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new MappingException($"Error When Mapping from the API Response Collection to the Collection of DTOs with Message: {ex.Message}");
             }
         }
         #endregion
