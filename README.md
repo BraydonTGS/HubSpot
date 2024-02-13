@@ -28,7 +28,7 @@ The Results are Exported to a TestOutput Folder inside the TestProject.Business
 In the TestBase Class update the _outputDirectory property by replacing "ADD YOUR FILE PATH HERE" - With your Repository Location.
 
 ## Architecture
-This application is built using a Three-Tier Architecture with the Repository Design Pattern, aimed at making the functionality reusable across different user interfaces and flexible for adding new user requirements.
+This application is built using a Three-Tier Architecture with the Repository Design Pattern, aimed at making the functionality reusable across different user interfaces and flexible for adding new user requirements. The User Interface would represent the "Third-Tier".
 
 ## Future Enhancements 
 - Implement more test methods for HubSpotApiService.
