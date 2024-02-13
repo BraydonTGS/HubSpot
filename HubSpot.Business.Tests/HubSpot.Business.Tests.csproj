@@ -21,4 +21,8 @@
     <ProjectReference Include="..\HubSpot.Business\HubSpot.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TestOutput\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
 ﻿using HubSpot.Business.Api;
 using HubSpot.Business.Api.Responses;
+using HubSpot.Business.Helpers;
 using HubSpot.Business.Mappers;
 using HubSpot.Business.Models;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,8 @@ namespace HubSpot.Business.Tests.Base
     /// </summary>
     public class TestBase
     {
+        protected string _outputDirectory = @"C:\Users\brayd\Documents\repos\HubSpot\HubSpot.Business.Tests\TestOutput\";
+
         // Register Services Required for Unit Tests //
         public virtual IServiceCollection ConfigureServices()
         {
@@ -23,6 +26,9 @@ namespace HubSpot.Business.Tests.Base
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IHubSpotApiService, HubSpotApiService>();
             services.AddScoped<IApiResponseMapper<ContactDto, HubSpotContactListApiResponse>, HubSpotApiResponseMapper>();
+
+            // Helpers //
+            services.AddSingleton<ICsvExportHelper, CsvExportHelper>();
 
             return services;
         }

@@ -1,4 +1,5 @@
 ﻿using HubSpot.Business.Api;
+using HubSpot.Business.Helpers;
 using HubSpot.Business.Tests.Base;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,12 +11,14 @@ namespace HubSpot.Business.Tests.HubSpotApiTest
         private readonly IServiceCollection _services;
         private readonly IServiceProvider _serviceProvider;
         private readonly IHubSpotApiService _hubSpotApiService;
+        private readonly ICsvExportHelper _csvExportHelper;
 
         public HubSpotApiServiceTests()
         {
             _services = ConfigureServices();
             _serviceProvider = _services.BuildServiceProvider();
             _hubSpotApiService = _serviceProvider.GetRequiredService<IHubSpotApiService>();
+            _csvExportHelper = _serviceProvider.GetRequiredService<ICsvExportHelper>();
         }
 
         [TestMethod]
@@ -32,6 +35,21 @@ namespace HubSpot.Business.Tests.HubSpotApiTest
 
             Assert.IsNotNull(contacts);
             Assert.AreEqual(20, contacts.Count());
+        }
+
+        [TestMethod]
+        public async Task HubSpotApiService_GetSpecifiedContactListAsync_WriteResultsToCSV_Success()
+        {
+
+            var contacts = await _hubSpotApiService.GetSpecifiedListOfContactsAsync(314);
+            Assert.IsNotNull(contacts);
+            Assert.AreEqual(20, contacts.Count());
+
+            var csvFileLocation = Path.Combine(_outputDirectory, "Contacts.csv");
+
+            var success = _csvExportHelper.ExportRecords(contacts, csvFileLocation);
+
+            Assert.IsTrue(success);
         }
 
     }
