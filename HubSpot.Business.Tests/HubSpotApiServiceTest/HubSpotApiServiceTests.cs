@@ -38,6 +38,58 @@ namespace HubSpot.Business.Tests.HubSpotApiTest
         }
 
         [TestMethod]
+        public async Task HubSpotApiService_GetSpecifiedContactListAsync_EnsurePropertiesAreNotNull_Success()
+        {
+
+            var contacts = await _hubSpotApiService.GetSpecifiedListOfContactsAsync(314);
+
+            Assert.IsNotNull(contacts);
+            Assert.AreEqual(20, contacts.Count());
+
+            foreach (var contact in contacts)
+            {
+                Assert.IsNotNull(contact.FirstName);
+                Assert.IsNotNull(contact.LastName);
+                Assert.IsNotNull(contact.Email);
+                Assert.IsNotNull(contact.AmsMemberNumber);
+            }
+        }
+
+        [TestMethod]
+        public async Task HubSpotApiService_GetSpecifiedContactListAsync_GetFirstContact_HasRequiredProperties_Success()
+        {
+
+            var contacts = await _hubSpotApiService.GetSpecifiedListOfContactsAsync(314);
+
+            var contact = contacts.FirstOrDefault();
+
+            Assert.IsNotNull(contact);
+
+            Assert.AreNotEqual(0, contact.Vid);
+            Assert.IsNotNull(contact.FirstName);
+            Assert.IsNotNull(contact.LastName);
+            Assert.IsNotNull(contact.Email);
+            Assert.IsNotNull(contact.AmsMemberNumber);
+
+            Assert.AreEqual(1, contact.Vid);
+            Assert.AreEqual("myNewName", contact.FirstName);
+            Assert.AreEqual("Halligan (Sample Contact)", contact.LastName);
+            Assert.AreEqual("bh@hubspot.com", contact.Email);
+            Assert.AreEqual("1025478057", contact.AmsMemberNumber);
+
+        }
+
+
+        [TestMethod]
+        public async Task HubSpotApiService_GetSpecifiedContactListAsync_IncorrectListSpecified_ResultsAreNull_Success()
+        {
+
+            var contacts = await _hubSpotApiService.GetSpecifiedListOfContactsAsync(46574);
+
+            Assert.AreEqual(null, contacts);
+        }
+
+        [TestMethod]
         public async Task HubSpotApiService_GetSpecifiedContactListAsync_WriteResultsToCSV_Success()
         {
 
