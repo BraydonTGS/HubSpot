@@ -1,28 +1,45 @@
 # HubSpot
-
-HubSpot Coding Challenge - "The goal of this exercise is to see how you approach coding. It's a simple exercise to download data from a restful endpoint and transform the data into a CSV file." 
+## HubSpot Coding Challenge 
 
 This project is part of a coding challenge designed to evaluate coding skills through a practical task: downloading data from a RESTful endpoint and transforming it into a CSV file. 
-The project is a work in progress but fulfills the essential requirements for the coding challenge. Currently, there is no user interface, and the application is intended to be executed using the test project
 
-After you Clone the Repository - Create a Static Class named Hidden in the Connection Folder, Add one private static property _hubSpotApiKey {get; set;} = "Your-API-Token";
+The project is a work in progress but fulfills the essential requirements for the coding challenge. 
 
-Add One Static Method GetHubSpotApiKey() That returns the _hubSpotApiKey; 
+Currently, there is no user interface, and the application is intended to be executed using the test project
 
-When this is Completed, Clean and Rebuid to ensure there are no errors. 
+## Setup
+Clone the Repository: After cloning the repository, proceed with the following setup steps.
 
-The HubSpotApiService.Tests Class has all of the Tests for Querying the HubSpot API. 
+In the Connection folder, create a static class named Hidden.
 
-There is also a Test which writes the results to CSV using a Helper Class that I created. 
+Add one private static property _hubSpotApiKey with the initializer set to "Your-API-Token";
 
-This application is buit using Three-Tier ARchitecture with the Repository Design Pattern. 
+Implement a static method GetHubSpotApiKey that returns the _hubSpotApiKey.
 
-The goal was to make the functionality reusable across different User Interfaces, as well as flexibile in terms of adding new user requirements. 
+Build the Project: Clean and rebuild the project to ensure there are no errors.
 
-There are many things that still need to be implemented: More Test Methods for the HubSpotApiService, Logging - Serilog, Mapper Test Class, CsvExportHelper Test Class, More Exception Handling, Adding a User Interface. 
+## Testing
+The HubSpotApiServiceTests Class Currently has all of the Tests for Querying the HubSpot API. 
+
+There is also a test that writes the results to a CSV file using a helper class developed for this purpose.
+
+The Results are Exported to a TestOutput Folder inside the TestProject.Business
+
+In the TestBase Class update the _outputDirectory property to a directory where you want test files outputed.
+
+## Architecture
+
+This application is built using a Three-Tier Architecture with the Repository Design Pattern, aimed at making the functionality reusable across different user interfaces and flexible for adding new user requirements.
+
+## Future Encancements
+Implement more test methods for HubSpotApiService.
+Integrate logging (e.g., Serilog).
+Develop a Mapper Test Class and CsvExportHelper Test Class.
+Enhance exception handling.
+Add a user interface.
+
 
 ## Project Structure
-
 ### Business
 The `Business` project contains the business logic of the application. It includes the following components:
 - **ApiService:**
@@ -38,7 +55,6 @@ The `Business` project contains the business logic of the application. It includ
 ### Test Projects
 The `Tests` Folder Contains all the Test Projects for the Application.
 - **HubSpot.Business.Tests:**
-
 
 ### Global Project
 The `Global` project serves as a central place for common files used across the application. It includes the following components:
