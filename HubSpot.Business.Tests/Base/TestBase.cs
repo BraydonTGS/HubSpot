@@ -14,7 +14,7 @@ namespace HubSpot.Business.Tests.Base
     /// </summary>
     public class TestBase
     {
-        protected string _outputDirectory = @"C:ADD YOUR FILE PATH HERE\HubSpot\HubSpot.Business.Tests\TestOutput\";
+        protected string _outputDirectory = @"C:\Users\brayd\Documents\repos\HubSpot\HubSpot.Business.Tests\TestOutput\";
 
         // Register Services Required for Unit Tests //
         public virtual IServiceCollection ConfigureServices()
