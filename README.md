@@ -10,13 +10,13 @@ Currently, there is no user interface, and the application is intended to be exe
 ## Setup
 Clone the Repository: After cloning the repository, proceed with the following setup steps.
 
-In the Connection folder, create a static class named Hidden.
+- In the Connection folder, create a static class named Hidden.
 
-Add one private static property _hubSpotApiKey with the initializer set to "Your-API-Token";
+- Add one private static property _hubSpotApiKey with the initializer set to "Your-API-Token";
 
-Implement a static method GetHubSpotApiKey that returns the _hubSpotApiKey.
+- Implement a static method GetHubSpotApiKey that returns the _hubSpotApiKey.
 
-Clean and rebuild the project to ensure there are no errors.
+- Clean and rebuild the project to ensure there are no errors.
 
 ## Testing
 The HubSpotApiServiceTests Class Currently has all of the Tests for Querying the HubSpot API. 
