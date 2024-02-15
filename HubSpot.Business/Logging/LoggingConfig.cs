@@ -21,7 +21,7 @@ namespace HubSpot.Business.Logging
                 .WriteTo.File(Path.Combine("Log", "log.txt"), rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
-            services.AddSingleton<Serilog.ILogger>(logger);
+            services.AddSingleton<ILogger>(logger);
         }
         #endregion
     }

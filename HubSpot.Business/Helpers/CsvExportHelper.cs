@@ -38,7 +38,7 @@ namespace HubSpot.Business.Helpers
             {
                 return false;
             }
-            }
-            #endregion
+            }       
         }
-    }
+    #endregion
+}

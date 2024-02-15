@@ -18,7 +18,8 @@ namespace HubSpot.Business.Api
         private readonly IApiResponseMapper<ContactDto, HubSpotContactListApiResponse> _mapper;
         private List<KeyValuePair<string, string>> _optionalParameters = new List<KeyValuePair<string, string>>();
 
-        public HubSpotApiService(IApiService apiService,
+        public HubSpotApiService(
+            IApiService apiService,
             IApiResponseMapper<ContactDto, HubSpotContactListApiResponse> mapper)
         {
             _apiService = apiService;

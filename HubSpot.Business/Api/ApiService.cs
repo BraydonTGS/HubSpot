@@ -1,5 +1,4 @@
-﻿using HubSpot.Business.Connection;
-using HubSpot.Global.Constants;
+﻿using HubSpot.Global.Constants;
 using HubSpot.Global.Exceptions;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
