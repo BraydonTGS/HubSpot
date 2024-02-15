@@ -38,7 +38,7 @@ This application is built using a Three-Tier Architecture with the Repository De
 - Develop a Mapper Test Class and CsvExportHelper Test Class.
 - Enhance exception handling.
 - Add a user interface.
-- Contine to Develop this README
+- Continue to Develop this README
 
 ## Project Structure
 ### Business

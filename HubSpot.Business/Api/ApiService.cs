@@ -58,8 +58,5 @@ namespace HubSpot.Business.Api
             }
         }
         #endregion
-
-
-
     }
 }
